@@ -1,7 +1,5 @@
 steal('can/util/mvc.js', 'can/view/ejs').then(function() {
 
-
-
   var fontsReady = (function() {
     var canvas = document.createElement("canvas"),
         context;
@@ -55,6 +53,7 @@ steal('can/util/mvc.js', 'can/view/ejs').then(function() {
           this.keyup();
         }, this )).attr("src", "/images/memes/one-does-not-simply.jpg");
       }, this ));
+
     },
 
     initCanvas : function( width, height ) {
@@ -104,9 +103,14 @@ steal('can/util/mvc.js', 'can/view/ejs').then(function() {
       this.ctx.textBaseline = 'bottom';
       this.writeCaption( bottomText, this.cvsHeight - this.options.yPadding )
     },
+    "{window} dragover" : function( el, ev ) {
+        ev.stopPropagation();
+        ev.preventDefault();
+    },
 
     "{window} drop" : function( el, ev ) {
       ev.preventDefault();
+      ev.stopPropagation();
 
       var file = ev.originalEvent.dataTransfer.files[0],
           reader = new FileReader();
@@ -123,8 +127,6 @@ steal('can/util/mvc.js', 'can/view/ejs').then(function() {
     },
     
     "button click": function( el, ev ) {
-      console.log( this );
-      console.log("button clicked");
       $.ajax({
         url : "http://api.imgur.com/2/upload.json",
         type : "post",
