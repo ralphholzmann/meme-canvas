@@ -1,0 +1,9 @@
+{
+    "name": "meme-canvas"
+  , "version": "1.0a"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.8"
+    , "jade": ">= 0.0.1"
+  }
+}
