@@ -177,7 +177,7 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
       this.ctx.textBaseline = 'bottom';
       this.writeCaption( bottomText, this.cvsHeight - this.options.yPadding )
       clearTimeout( calcTimeout );
-      calcTimeout = setTimeout( $.proxy( this.calculateSize, this ), 500 );
+      calcTimeout = setTimeout( $.proxy( this.calculateSize, this ), 100 );
     },
     "{window} dragover" : function( el, ev ) {
         ev.stopPropagation();
