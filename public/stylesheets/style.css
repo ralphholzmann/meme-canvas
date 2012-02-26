@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'ImpactBackup';
-  src: url('/fonts/impact-opt.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;

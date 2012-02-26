@@ -1,5 +1,70 @@
-<textarea id=top>One does not simply...</textarea>
 <canvas width=555 height=327></canvas>
-<textarea id=bottom>Create a meme generator in HTML5 canvas</textarea>
-<button>To Imgur!</button>
-<input type=text id=imgurLink />
+<form>
+
+  <fieldset>
+    <legend>Options</legend>
+    <ul>
+      <li>
+        <label>Top Caption:</label>
+        <textarea id=top>One does not simply...</textarea>
+      </li>
+      <li>
+        <label>Bottom Caption:</label>
+        <textarea id=bottom>Create a meme generator in HTML5 canvas</textarea>
+      </li>      
+      <li>
+        <label>Text transform</label>
+        <label>
+          <input type=radio name=text-transform value=uppercase checked=checked />
+          Uppercase
+        </label>
+        <label>
+          <input type=radio name=text-transform value=lowercase />
+          Lowercase
+        </label>
+        <label>
+          <input type=radio name=text-transform value=none />
+          None
+        </label>
+      </li>
+       <li>
+        <label>Text align</label>
+        <label>
+          <input type=radio name=text-align value=left />
+          Left
+        </label>
+        <label>
+          <input type=radio name=text-align value=center checked=checked />
+          Center
+        </label>
+        <label>
+          <input type=radio name=text-align value=right />
+          Right
+        </label>
+      </li>
+  </fieldset>
+
+  <fieldset>
+    <legend>Imgur</legend>
+    <ul>
+      <li>
+        <label>File type</label>
+        <label>
+          <input type=radio name=filetype value=jpeg checked=checked />
+          JPEG
+          <span class=size id=jpeg-size></span>
+        </label>
+        <label>
+          <input type=radio name=filetype value=png />
+          PNG
+          <span class=size id=png-size></span>
+        </label>
+      </li>
+      <li>
+        <button>Upload!</button>
+        <input type=text id=imgurLink />
+      </li>
+    </ul>
+  </fieldset>
+
+</form>
