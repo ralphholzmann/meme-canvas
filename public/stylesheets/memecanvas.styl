@@ -1,0 +1,89 @@
+@import "nib"
+@import "reset.css"
+
+* 
+  -moz-box-sizing border-box 
+  -webkit-box-sizing border-box 
+  box-sizing border-box
+
+html, body 
+  height 100%
+  overflow hidden
+
+#search
+  border-top 2px solid #000
+  width 240px
+  background transparent url(/images/bg-linen.jpg) repeat scroll center
+  height 100%
+  padding 12px
+  overflow-x hidden
+  overflow-y auto
+  position absolute
+  top 0
+  left 0
+  bottom 0
+
+  input
+    border-radius 12px
+    margin-bottom 6px
+
+  ul, li
+    padding 0
+    margin 0
+
+  li
+    cursor pointer
+    color #efefef
+    text-shadow 1px 2px 0 #000
+    list-style-type none
+    height 48px
+    line-height 48px
+    margin 12px 0
+    background-color rgba( 0, 0, 0, .2)
+    background-repeat no-repeat
+    background-attachment scroll
+    background-position left center
+    background-size 46px 46px
+    padding-left 54px
+    border-radius 12px
+    border 1px solid rgba( 0, 0, 0, .3)
+    -webkit-background-clip padding-box
+    background-clip padding-box
+
+
+#shadow
+  position relative
+  margin-left 228px
+  background transparent linear-gradient-image( 12px left, hsla(0,0,0,0), hsla(0,0,0,.3) ) repeat-y scroll left
+  z-index 2
+  padding-left 12px
+
+#shadow, #container
+  overflow-x hidden
+  overflow-y auto
+  height 100%
+
+#container
+  text-align center
+  background-color #eee
+
+  #memewrap
+    background transparent linear-gradient-image( 3px top, rgba( 0, 0, 0, .7 ), rgba( 0, 0, 0, 0 ) ) repeat-x scroll left top
+    padding-top 24px
+
+  header
+    font-family: 'Leckerli One', cursive;
+    border-top 1px solid hsla( 230, 70%, 55%, 1 )
+    background transparent linear-gradient-image( 132px top, hsla( 230, 60%, 45%, 1 ), rgba( 0, 0, 0, .9 ) ) repeat-x scroll left
+    border-bottom 1px solid #000
+    color #fff
+    text-shadow: 0 1px 0 #aaa, 0 2px 0 #999, 0 3px 0 #888, 0 4px 0 #878787, 0 5px 0 #777, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+
+    h1
+      font-size 54px
+      line-height 68px
+      margin 0
+      padding 12px
+
+  li
+    list-style-type none

@@ -1,9 +1,12 @@
 {
-    "name": "meme-canvas"
+    "name": "memecanvas"
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
       "express": "2.5.8"
-    , "jade": ">= 0.0.1"
+    , "stylus": ">= 0.0.1"
+    , "nib": ">= 0.3.2"
+    , "canvas": ">= 0.10.2"
+    , "ejs": ">= 0.0.1"
   }
 }

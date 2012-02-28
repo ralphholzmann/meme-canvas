@@ -1,35 +1,8 @@
 steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
 
-  var fontsReady = (function() {
-    var canvas = document.createElement("canvas"),
-        context;
-    canvas.width  = 1;
-    canvas.height = 1;
-    context = canvas.getContext("2d");
+  var calcTimeout;
 
-    $.extend( context, {
-      textAlign : 'center',
-      textBaseline: 'middle',
-      fillStyle : "#000000",
-      font : 'normal 1000px Impact, "ImpactBackup"'
-    });
-    
-    return function( callback ) {
-      context.fillRect( 0, 0, 1, 1 )
-      context.fillStyle = "#ffffff";
-      context.fillText( "X", 1, 1 );
-      if ( context.getImageData(0, 0, 1, 1).data[0] === 0 ) {
-        context.fillStyle = "#000000";
-        setTimeout(function() {
-          fontsReady( callback );
-        }, 0);
-      } else {
-        callback();
-      }
-    }
-  }()),
-
-  Meme = Can.Control("Meme", {
+  can.Control("MemeController", {
 
     getJpeg : (function() {
       var c = document.createElement("canvas"),
@@ -76,7 +49,7 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
   {
     init : function() {
       
-      Can.view( "./meme/meme.ejs", {}, {}, $.proxy( function( tmpl ) {
+      can.view( "memecanvas/controllers/meme/views/meme.ejs", {}, {}, $.proxy( function( tmpl ) {
        this.element.html( tmpl );
         this.canvas = this.element.find("canvas");
         this.cvsWidth  = this.canvas.width();
@@ -259,12 +232,8 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
 
       ev.preventDefault();
     }
-  }),
-  calcTimeout;
-
-
-  fontsReady(function() {
-    new Meme("#container");
   });
+
+
 
 });

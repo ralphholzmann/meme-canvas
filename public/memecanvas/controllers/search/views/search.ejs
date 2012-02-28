@@ -1,0 +1,10 @@
+<input type=search>
+<ul>
+  <% $.each( this, function( i, meme ) { %>
+  <li data-id=<%=meme.id%> style="background-image: url(/images/memes/<%=meme.src%>);">
+    <label>
+      <%= meme.name %>
+    </label>
+  </li>
+  <% }); %>
+</ul>
