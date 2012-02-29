@@ -10,22 +10,46 @@ html, body
   height 100%
   overflow hidden
 
+body
+  min-height 480px
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+.csstransforms.csstransitions body
+  transform translateZ(0px);
+
+.csstransforms.csstransitions #shadow
+  transition-duration 0.4s
+  transition-property transform
+  -webkit-transition-property -webkit-transform
+  -moz-transition-property -moz-transform
+  -o-transition-property -o-transform
+  transition-timing-function ease-in-out
+
 #search
   border-top 2px solid #000
   width 240px
   background transparent url(/images/bg-linen.jpg) repeat scroll center
-  height 100%
   padding 12px
-  overflow-x hidden
-  overflow-y auto
   position absolute
   top 0
   left 0
   bottom 0
 
+  ul
+    overflow-x hidden
+    overflow-y auto
+    position absolute
+    top 48px
+    bottom 0
+
+
   input
     border-radius 12px
-    margin-bottom 6px
+    margin-bottom 12px
 
   ul, li
     padding 0
@@ -38,7 +62,7 @@ html, body
     list-style-type none
     height 48px
     line-height 48px
-    margin 12px 0
+    margin 0 12px 12px 0
     background-color rgba( 0, 0, 0, .2)
     background-repeat no-repeat
     background-attachment scroll
@@ -67,15 +91,27 @@ html, body
   text-align center
   background-color #eee
 
+  canvas
+    width 100%
+    max-width 500px
+
   #memewrap
-    background transparent linear-gradient-image( 3px top, rgba( 0, 0, 0, .7 ), rgba( 0, 0, 0, 0 ) ) repeat-x scroll left top
-    padding-top 24px
+    border-top 1px solid #aaa
+    padding 24px 12px
+    overflow-x hidden
+    overflow-y auto
+    position absolute
+    top 94px
+    left 12px
+    right 0
+    bottom 0
 
   header
+    position relative
     font-family: 'Leckerli One', cursive;
-    border-top 1px solid hsla( 230, 70%, 55%, 1 )
-    background transparent linear-gradient-image( 132px top, hsla( 230, 60%, 45%, 1 ), rgba( 0, 0, 0, .9 ) ) repeat-x scroll left
-    border-bottom 1px solid #000
+    border-top 1px solid hsla( 230, 70%, 45%, 1 )
+    background transparent linear-gradient-image( 92px top, hsla( 230, 60%, 45%, 1 ), hsla( 230, 60%, 30%, 1 )) repeat-x scroll left
+    border-bottom 1px solid hsla( 230, 60%, 20%, 1 )
     color #fff
     text-shadow: 0 1px 0 #aaa, 0 2px 0 #999, 0 3px 0 #888, 0 4px 0 #878787, 0 5px 0 #777, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 
@@ -85,5 +121,40 @@ html, body
       margin 0
       padding 12px
 
+    button
+      display none
+
   li
     list-style-type none
+
+@media screen and (max-width:900px) 
+  #shadow
+    margin-left -12px
+
+  #container
+    #memewrap
+      top 46px
+    header
+      background transparent linear-gradient-image( 44px top, hsla( 230, 60%, 45%, 1 ), hsla( 230, 60%, 35%, 1 )) repeat-x scroll left
+
+      h1
+        font-size 24px
+        line-height 32px
+        padding 4px 6px 8px 6px
+      
+      button
+        display block
+        float left
+        border-radius 4px
+        margin 7px 0 0 6px
+        background-color hsla( 230, 65%, 50%, 1 )
+        border 1px solid hsla( 230, 60%, 25%, 1 )
+        border-top 1px solid hsla( 230, 60%, 25%, 1 )
+        border-bottom 1px solid hsla( 230, 60%, 25%, 1 )
+        color #fff
+        height 30px
+        line-height 24px
+        font-size 14px
+        font-weight bold
+        box-shadow inset 0 0 4px rgba( 0, 0, 0, .6 )
+        text-shadow 0 2px 1px rgba( 0, 0, 0, .4 )

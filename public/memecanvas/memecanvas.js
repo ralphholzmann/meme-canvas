@@ -36,5 +36,14 @@ steal(
   fontsReady(function() {
     new MemeController("#container");
     new SearchController("#search");
+    setTimeout(function() {
+      window.scrollTo(0,1);
+      $window.on("resize", function() {
+        //$body.height( $window.height() );
+      }).trigger("resize");
+    }, 0)
   });
+
+  var $window = $(window),
+      $body   = $(document.body);
 });

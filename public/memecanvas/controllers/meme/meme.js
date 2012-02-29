@@ -64,11 +64,39 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
         this.imgurLink = this.element.find("#imgurLink");
         this.pngSize = this.element.find("#png-size");
         this.jpegSize = this.element.find("#jpeg-size");
+        this.shadow = this.element.closest("#shadow")
         this.image  = $("<img />").load( $.proxy( function() {
           this.initCanvas( this.image[0].width, this.image[0].height );
           this.keyup();
         }, this )).attr("src", "/images/memes/one-does-not-simply.jpg");
       }, this ));
+
+
+    },
+
+    "header button mousedown" : function() {
+
+      if ( ! this.open ) {
+        this.shadow.width( this.shadow.outerWidth() );
+      }
+      if ( Modernizr.csstransforms && Modernizr.csstransitions ) {
+        this.shadow.css( Modernizr.prefixed("transform"), this.open ? "none" : "translateX(240px)" );
+        setTimeout($.proxy( function(){
+          if ( this.open ) {
+            //this.shadow.css("width", "auto");
+          }
+          this.open = ! this.open;
+        }, this), 400);
+      } else {
+        this.shadow.animate({
+          marginLeft : this.open ? 0 : "240px"
+        }, $.proxy( function() {
+          if ( this.open ) {
+            this.shadow.css("width", "auto");
+          }
+          this.open = ! this.open;
+        }, this ));
+      }
 
     },
 
@@ -214,7 +242,7 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
       
     },
     
-    "button click": function( el, ev ) {
+    "#memewrap button click": function( el, ev ) {
       var data;
 
       if ( this.options.filetype == "jpeg" ) {
