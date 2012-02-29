@@ -36,6 +36,10 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
 
     imgurApiKey : "5bd69574be5c39339e97145062b40896",
 
+    listensTo : [
+      "updateMeme"
+    ],
+
     defaults : {
       strokeWeight : 10,
       xPadding : 10,
@@ -66,6 +70,13 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
         }, this )).attr("src", "/images/memes/one-does-not-simply.jpg");
       }, this ));
 
+    },
+
+    "{window} updateMeme" : function( w, e, meme ) {
+        this.image  = $("<img />").load( $.proxy( function() {
+          this.initCanvas( this.image[0].width, this.image[0].height );
+          this.keyup();
+        }, this )).attr("src", "/images/memes/" + meme.src);
     },
 
     initCanvas : function( width, height ) {
