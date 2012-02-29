@@ -16,6 +16,9 @@ steal( 'can/util/mvc.js', 'can/view/ejs' ).then(function() {
 
     "li click" : function( el, ev ) {
       this.element.trigger("updateMeme", this.memeList.getById( el.data("id") ));
+      setTimeout($.proxy(function() {
+        this.element.siblings().find("header button:visible").trigger("mousedown");
+      }, this), 0);
     }
   });
 
