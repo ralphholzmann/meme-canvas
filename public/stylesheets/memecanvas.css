@@ -5,10 +5,11 @@ body{min-height:480px;position:absolute;top:0;left:0;right:0;bottom:0}
 .csstransforms.csstransitions body{-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}
 .csstransforms.csstransitions #shadow{-webkit-transition-duration:.4s;-moz-transition-duration:.4s;transition-duration:.4s;-webkit-transition-property:transform;-moz-transition-property:transform;transition-property:transform;-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-webkit-transition-timing-function:ease-in-out;-moz-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}
 #search{border-top:2px solid #000;width:240px;background:transparent url("/images/bg-linen.jpg") repeat scroll center;padding:12px;position:absolute;top:0;left:0;bottom:0;}
-#search ul{overflow-x:hidden;overflow-y:auto;position:absolute;top:48px;bottom:0}
+#search ul{overflow-x:hidden;overflow-y:auto;position:absolute;top:48px;bottom:0;width:228px}
 #search input{-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;margin-bottom:12px}
 #search ul,#search li{padding:0;margin:0}
-#search li{cursor:pointer;color:#efefef;text-shadow:1px 2px 0 #000;list-style-type:none;height:48px;line-height:48px;margin:0 12px 12px 0;background-color:rgba(0,0,0,0.20);background-repeat:no-repeat;background-attachment:scroll;background-position:left center;-webkit-background-size:46px 46px;-moz-background-size:46px 46px;background-size:46px 46px;padding-left:54px;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.30);-webkit-background-clip:padding-box;background-clip:padding-box}
+#search li{cursor:pointer;color:#ddd;text-shadow:1px 2px 0 #000;list-style-type:none;height:48px;line-height:48px;margin:0 12px 12px 0;background-color:rgba(0,0,0,0.20);background-repeat:no-repeat;background-attachment:scroll;background-position:left center;-webkit-background-size:46px 46px;-moz-background-size:46px 46px;background-size:46px 46px;padding-left:54px;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.30);-webkit-background-clip:padding-box;background-clip:padding-box;text-overflow:ellipsis;overflow:hidden;}
+#search li span{color:#eef;font-weight:bold;text-decoration:underline}
 #shadow{position:relative;margin-left:228px;background:transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAABCAYAAADq6085AAAABmJLR0QA/wD/AP+gvaeTAAAAHElEQVQImWNkYGBgZmBgYINidiQ2Op+dgYGBDQAGigBK6Re1+gAAAABJRU5ErkJggg==') repeat-y scroll left;z-index:2;padding-left:12px}
 #shadow,#container{overflow-x:hidden;overflow-y:auto;height:100%}
 #container{text-align:center;background-color:#eee;}

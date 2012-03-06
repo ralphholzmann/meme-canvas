@@ -1,0 +1,20 @@
+<% if ( this.memes.length ) { 
+    if ( term ) {
+    var split = new RegExp( term, "gi");
+      $.each( this.memes, function( i, meme ) { %>
+      <li data-id=<%=meme.id%> style="background-image: url(/images/memes/<%=meme.src%>);">
+        <%== meme.name.replace( split, function( match ) {
+          return "<span>" + match + "</span>";
+        }) %>
+      </li>
+    <% }); %>
+  <% } else { %>
+    <% $.each( this.memes, function( i, meme ) { %>
+      <li data-id=<%=meme.id%> style="background-image: url(/images/memes/<%=meme.src%>);">
+        <%== meme.name %>
+      </li>
+    <% }); %>
+  <% } %>
+<% } else { %>
+
+<% } %>

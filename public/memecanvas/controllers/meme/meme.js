@@ -1,5 +1,17 @@
 steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
 
+  var debounce = function( fn, ms, context ) {
+    var timeout;
+    return function() {
+      var self = this,
+          args = arguments;
+      clearTimeout( timeout );
+      timeout = setTimeout(function() {
+        fn.apply( context || self, args );
+      }, ms )
+    }
+  };
+
   var calcTimeout;
 
   can.Control("MemeController", {
@@ -176,7 +188,7 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
       }, this ));
     },
 
-    "keyup" : function() {
+    "keyup" : debounce( function() {
       var topText     = this.top.val(),
           bottomText  = this.bottom.val(); 
 
@@ -188,9 +200,9 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
       this.writeCaption( topText, this.options.yPadding )
       this.ctx.textBaseline = 'bottom';
       this.writeCaption( bottomText, this.cvsHeight - this.options.yPadding )
-      clearTimeout( calcTimeout );
-      calcTimeout = setTimeout( $.proxy( this.calculateSize, this ), 100 );
-    },
+      this.calculateSize();
+
+    }, 60 ),
     "{window} dragover" : function( el, ev ) {
         ev.stopPropagation();
         ev.preventDefault();
@@ -229,7 +241,7 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
       this.keyup();
     },
 
-    calculateSize : function() {
+    calculateSize : debounce( function() {
       var sizes = {
         jpeg : this.constructor.getJpeg( this.canvas[0] ),
         png : this.constructor.getPng( this.canvas[0] )
@@ -240,7 +252,7 @@ steal('can/util/mvc.js', 'can/view/ejs' ).then(function() {
         this[ type + "Size" ].text( kb.toFixed(1) + "kb" );
       }, this ));
       
-    },
+    }, 500),
     
     "#memewrap button click": function( el, ev ) {
       var data;

@@ -45,6 +45,7 @@ body
     position absolute
     top 48px
     bottom 0
+    width 228px
 
 
   input
@@ -57,7 +58,7 @@ body
 
   li
     cursor pointer
-    color #efefef
+    color #ddd
     text-shadow 1px 2px 0 #000
     list-style-type none
     height 48px
@@ -73,6 +74,13 @@ body
     border 1px solid rgba( 0, 0, 0, .3)
     -webkit-background-clip padding-box
     background-clip padding-box
+    text-overflow ellipsis
+    overflow hidden
+
+    span
+      color #eeeeff
+      font-weight bold
+      text-decoration underline
 
 
 #shadow
